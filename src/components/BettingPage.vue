@@ -41,11 +41,11 @@ function generateResultString() {
 function calculateResult() {
   let totalCost = 0;
   for (let i = 0; i < options.value.length; i++) {
-    let cost = 0;
+    let cost = 1;
     for (let j = 0; j < options.value.length; j++) {
       if (i == j)
         continue;
-      cost += options.value[j].odds;
+      cost *= options.value[j].odds;
     }
     totalCost += cost;
     options.value[i].result = cost;
